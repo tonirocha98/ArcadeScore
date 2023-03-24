@@ -33,8 +33,6 @@ namespace Fliperama.API.Repositories
 
         public static void Add(string key, object value)
         {
-            //CacheItemPriority priority = CacheItemPriority.NotRemovable;
-            //var expiration = TimeSpan.FromMinutes(10);
             cache.Insert(key, value);
         }
 

@@ -10,13 +10,6 @@ namespace Fliperama.API.Controllers
     [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class PointController : ApiController
     {
-        // GET: Point
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
-
-
         public object Get()
         {
             var result = CacheModel.Get("pontos");
@@ -30,7 +23,6 @@ namespace Fliperama.API.Controllers
             var month = Convert.ToInt32(split[1]);
             var year = Convert.ToInt32(split[2]);
             var ponto = new Point() { Jogador = payload.Jogador, Valor = payload.Valor, DataPartida = new DateTime(year, month, day) };
-            //CacheModel.Add("9b531ef27e7a421293af292606b2555c", ponto);
 
             List<Point> cachePontos = CacheModel.Get("pontos") as List<Point>;
             List<Point> pontos = new List<Point>();
